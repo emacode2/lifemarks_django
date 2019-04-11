@@ -6,4 +6,7 @@
 <h3>{{ mark.category }}</h3>
 
 <p>{{ mark.created_on }}</p>
+<h5>
+  {{ mark.title }} <a href="{% url 'mark_delete' pk=mark.pk %}">(delete)</a>
+</h5>
 {% endblock %}

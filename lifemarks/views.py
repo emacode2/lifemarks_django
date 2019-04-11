@@ -32,4 +32,8 @@ def mark_edit(request, pk):
             return redirect('mark_detail', pk=mark.pk)
     else:
         form = MarkForm(instance=mark)
-    return render(request, 'lifemarks/mark_form.html', {'form': form})       
+    return render(request, 'lifemarks/mark_form.html', {'form': form}) 
+
+def mark_delete(request, pk):
+    Mark.objects.get(id=pk).delete()
+    return redirect('mark_list')
