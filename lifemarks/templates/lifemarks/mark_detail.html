@@ -1,3 +1,4 @@
+{% extends 'lifemarks/base.html' %} {% block content %}
 <h2>{{ mark.title }} <a href="">(edit)</a></h2>
 <h4>{{ mark.content }}</h4>
 
@@ -5,3 +6,4 @@
 <h3>{{ mark.category }}</h3>
 
 <p>{{ mark.created_on }}</p>
+{% endblock %}

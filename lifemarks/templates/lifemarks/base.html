@@ -1,0 +1,15 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <title>lifemarks</title>
+    <link rel="stylesheet" href="{% static 'css/lifemarks.css' %}" />
+  </head>
+
+  <body>
+    <h1>LIFEMARKS</h1>
+    <nav>
+      <a href="/">Marks</a>
+    </nav>
+    {% block content %} {% endblock %}
+  </body>
+</html>
