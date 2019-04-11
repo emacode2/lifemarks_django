@@ -1,5 +1,5 @@
 {% extends 'lifemarks/base.html' %} {% block content %}
-<h2>{{ mark.title }} <a href="">(edit)</a></h2>
+<h2>{{ mark.title }} <a href="{% url 'mark_edit' pk=mark.pk %}">(edit)</a></h2>
 <h4>{{ mark.content }}</h4>
 
 <img src="{{ mark.photo_url }}" alt="" class="mark-photo" />
