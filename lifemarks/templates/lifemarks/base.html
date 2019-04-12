@@ -4,26 +4,32 @@
     <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'> -->
-    <link rel="stylesheet" type='text/css' href="{% static 'css/lifemarks.css' %}" />
-    
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/lifemarks.css' %}"
+    />
+
     <title>lifemarks</title>
   </head>
 
   <body>
     <h1>JOURNAL</h1>
+  <div class=container>
     <nav>
-      <a href="/">Marks</a>
+      <a href="/" style="text-decoration:none;">Marks</a>
       <div class="user-info">
-        {% if user.is_authenticated %}
-        Welcome, {{ user.username }}
+        {% if user.is_authenticated %} Welcome, {{ user.username }}
         <a href="{% url 'logout' %}">Signout</a>
         {% else %}
-        <a href="{% url 'login' %}">Login</a>
-        
+        <a href="{% url 'login' %}" style="text-decoration:none;">Login</a>
 
         {% endif %}
+      </div>
     </nav>
+    <div class="body-content"></div>
     {% block content %} {% endblock %}
-    <script src="{% static 'app.js' %}"></script>
   </body>
+  <footer></footer>
+</div>
 </html>

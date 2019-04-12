@@ -2,9 +2,10 @@
 # Create your views here.
 from django.shortcuts import render, redirect
 from .forms import MarkForm
-
+from django.contrib.auth.decorators import login_required
 from .models import Mark
 
+@login_required
 def mark_create(request):
     if request.method == 'POST':
         form = MarkForm(request.POST)
@@ -23,6 +24,7 @@ def mark_detail(request, pk):
     mark = Mark.objects.get(id=pk)
     return render(request, 'lifemarks/mark_detail.html', {'mark': mark}) 
 
+@login_required
 def mark_edit(request, pk):
     mark = Mark.objects.get(pk=pk)
     if request.method == "POST":
@@ -34,6 +36,10 @@ def mark_edit(request, pk):
         form = MarkForm(instance=mark)
     return render(request, 'lifemarks/mark_form.html', {'form': form}) 
 
+@login_required
 def mark_delete(request, pk):
     Mark.objects.get(id=pk).delete()
     return redirect('mark_list')
+
+
+
