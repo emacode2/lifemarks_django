@@ -19,6 +19,35 @@ from django.contrib import admin
 
 urlpatterns = [
     path('admin', admin.site.urls),
-    path('', include('lifemarks.urls')),
-]
+    path('', include('lifemarks.urls')), 
+    path('accounts/', include('django.contrib.auth.urls')),  
+]    
 
+
+# from django.conf.urls import include, url
+# from django.contrib import admin
+# from django.contrib.auth import views as auth_views
+
+# urlpatterns = [
+#     path('admin', admin.site.urls),
+#     path('', include('lifemarks.urls')),
+#     url('accounts/login/$', auth_views.login, name='login'),
+#     url('accounts/logout/$', auth_views.logout, name='logout')
+# ]
+
+# from django.conf.urls import include
+# from django.contrib import admin
+# from django.urls import path
+# from tunr import views as lifemarks_views
+# from django.contrib.auth import views as auth_views
+
+
+
+
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('', include('tunr.urls')),
+#     path('accounts/', include('django.contrib.auth.urls')),
+#     path('accounts/signup/', lifemarks_views.sign_up, name='signup'),
+#     # path('accounts/login/', auth_views.login, name='login'),
+#     # path('accounts/logout/', auth_views.logout, name='logout')
